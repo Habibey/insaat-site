@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Geodezik Kubbe Modelleme{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">İnşaat Mühendisliği Modelleme Araçları</span>
+        <a href="/uygulamalar" class="btn btn-outline-light btn-sm">Diğer projelere göz at</a>
+    </div>
+</nav>
+
+<div class="container mb-5">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="card p-4">
+                <h4 class="mb-3">Kubbe Parametreleri</h4>
+                
+                {% if error %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
+
+                <form method="POST" action="{% url 'geodezik_uygulama' %}">
+                    {% csrf_token %} <div class="mb-3">
+                        <label class="form-label fw-bold">Kubbe Tipi (Yüz Sayısı)</label>
+                        <select name="type" class="form-select">
+                            <option value="3" {% if params.type == 3 %}selected{% endif %}>Tetrahedron (3)</option>
+                            <option value="4" {% if params.type == 4 %}selected{% endif %}>Octahedron (4)</option>
+                            <option value="5" {% if params.type == 5 %}selected{% endif %}>Icosahedron (5)</option>
+                            <option value="6" {% if params.type == 6 %}selected{% endif %}>Hexahedron (6)</option>
+                            <option value="7" {% if params.type == 7 %}selected{% endif %}>Heptahedron (7)</option>
+                            <option value="8" {% if params.type == 8 %}selected{% endif %}>Octahedron_8 (8)</option>
+                            <option value="9" {% if params.type == 9 %}selected{% endif %}>Enneahedron (9)</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Açıklık (Span - Metre)</label>
+                        <input type="number" step="0.01" name="span" class="form-control" value="{{ params.span }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Yükseklik (Height - Metre)</label>
+                        <input type="number" step="0.01" name="height" class="form-control" value="{{ params.height }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Frekans</label>
+                        <input type="number" name="freq" class="form-control" value="{{ params.freq }}" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Modeli Güncelle ve Çiz</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card p-2 plot-container d-flex justify-content-center align-items-center">
+                {% if plot_div %}
+                    {{ plot_div|safe }}
+                {% else %}
+                    <div class="text-center text-muted">
+                        <h5>3D Model Hazırlanıyor...</h5>
+                        <p>Lütfen sol taraftan parametreleri girip "Çiz" butonuna basın.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    
+   
+{% endblock %}
