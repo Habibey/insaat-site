@@ -1,0 +1,90 @@
+.custom-navbar {
+    margin:20px;
+    border-radius: 50px;
+    padding:10px 30px;
+    border:3px solid #120d4e;
+
+}
+
+.page-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #120d4e;
+}
+
+.color{
+    background-color: #070520;
+}
+/* 1. Profil Fotoğrafı Ayarları */
+.profile-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Resmin basıklaşmasını önler */
+    border: 2px solid #eee;
+    transition: transform 0.2s;
+}
+
+/* Üzerine gelince fotoğrafın azıcık büyümesi şık durur */
+tr:hover .profile-thumb {
+    transform: scale(1.1);
+    border-color: #120d4e; /* Belirlediğin tema rengi */
+}
+
+/* 2. Tablo Özel Stilleri */
+.custom-table {
+    background-color: white;
+    border: 1px solid #efefef;
+}
+
+.custom-table thead th {
+    padding: 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.custom-table tbody td {
+    padding: 15px;
+    color: #444;
+}
+
+/* 3. Özel Buton Stili (Tema Rengine Göre) */
+.btn-outline-custom {
+    color: var(--ana-tema-rengi);
+    border-color: var(--ana-tema-rengi);
+    transition: all 0.3s;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--ana-tema-rengi);
+    color: white;
+}
+
+/* 4. Tablo Kapsayıcısının Ovalliği */
+.table-responsive {
+    border-radius: 15px;
+    overflow: hidden; /* Köşelerin oval kalması için */
+}
+
+.hero-section {
+    margin:auto;
+    background-image: url('../images/tasarım.jpg'); /* Örnek resim yolu */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax efekti: Kaydırırken resim sabit kalır */
+    height: 60vh; /* Ekranın %60'ını kaplar */
+    position: relative;
+    margin-top: 20px;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.5); /* Resmi %50 karartır ki beyaz yazılar okunsun */
+    height: 100%;
+    width: 100%;
+}
+
+.deneme{
+    background-color: #4b7ff0;
+}
+

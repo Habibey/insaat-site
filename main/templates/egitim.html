@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Akademik Ekibimiz{% endblock %}
+
+{% block content %}
+    <div class="table-responsive shadow-sm">
+        <table class="table table-hover align-middle custom-table">
+            <thead>
+                <tr>
+                    <th style="width: 80px;">Profil</th>
+                    <th>İsim </th>
+                    <th>Ünvan</th>
+                    <th>Uzmanlık Alanı</th>
+                    <th class="text-end">İletişim</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for member in members %}
+                <tr onclick="window.location.href='{% url 'uyedetay' member.pk %}'" style="cursor: pointer;">
+                    <td><img src="{{member.resim.url}}" class="rounded-circle profile-thumb" alt="{{member.name}}" width="60" height="60"></td>
+                    <td>{{member.name}} </td>
+                    <td>{{member.unvan}}</td>
+                    <td>{{member.uzmanlikAlani}}</td>
+                    <td class="text-end"><a href="mailto:{{member.email}}" class="btn btn-sm btn-outline-success">E-posta</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

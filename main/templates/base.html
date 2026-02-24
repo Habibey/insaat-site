@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"
+      integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">       
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    
+    <nav><div class="container-fluid">
+        <div class="col-12">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menü</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link "  href="/">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link "  href="/egitim/">Egitim</a>
+                </li>
+                 <li class="nav-item">
+                <a class="nav-link " href="#">Sosyal</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link "  href="/hakkimda/">Hakkımda</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            </div>
+        </div>
+        </nav>
+
+        </div>
+    </div>
+    </nav>
+    <main style="min-height: 600px;">
+    {% block content %}
+    {% endblock %}
+    </main>
+   
+    <footer><div class="container-fluid color">
+        <div class="row p-5 text-white">
+        <div class="col-md-4 ">
+            <h4>Footer 1</h4>
+            <div><a class="text-white" href="#">Menu1</a></div>
+            <div><a class="text-white" href="#">Menu2</a></div>
+            <div><a class="text-white" href="#">Menu3</a></div>
+            <div><a class="text-white" href="#">Menu4</a></div>  
+        </div>     
+
+        <div class="col-md-4 ">
+            <h4>Footer 2</h4>
+            <div><a class="text-white" href="#">Menu1</a></div>
+            <div><a class="text-white" href="#">Menu2</a></div>
+            <div><a class="text-white" href="#">Menu3</a></div>
+            <div><a class="text-white" href="#">Menu4</a></div>  
+        </div>  
+
+        <div class="col-md-4 ">
+            <h4>Footer 3</h4>
+            <div><a class="text-white" href="#">Menu1</a></div>
+            <div><a class="text-white" href="#">Menu2</a></div>
+            <div><a class="text-white" href="#">Menu3</a></div>
+            <div><a class="text-white" href="#">Menu4</a></div>  
+        </div> 
+
+    
+             
+        </div>
+    </div>
+    </footer>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js" integrity="sha512-HvOjJrdwNpDbkGJIG2ZNqDlVqMo77qbs4Me4cah0HoDrfhrbA+8SBlZn1KrvAQw7cILLPFJvdwIgphzQmMm+Pw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

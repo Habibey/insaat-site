@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Hakkımda{% endblock %}
+
+{% block content %}
+    
+    <div class="text-center"><img src="{{ hakkimizda.resim.url }}" alt="Hakkımızda Resmi" class="img-fluid w-50"></div>
+    <p>{{ hakkimizda.description }}</p>
+{% endblock %}
