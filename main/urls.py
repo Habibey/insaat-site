@@ -8,8 +8,10 @@ urlpatterns = [
     path('hakkimda/', views.hakkimda, name='hakkimda'), # Hakkımda sayfası URL'si
     path('egitim/', views.egitim, name='egitim'), # Eğitim sayfası URL'si
     path('uyedetay/<int:pk>/', views.uyedetay, name='uyedetay'), # Üye detay sayfası URL'si
-    path('sosyal/',views.sosyal,name='sosyal') # Sosyal sayfası URL'si
+    path('sosyal/',views.sosyal,name='sosyal'), # Sosyal sayfası URL'si
+    path('uygulamalar/',views.uygulamalar,name='uygulamalar'), # Uygulamalar sayfası URL'si
+    path('geodezik/', views.geodezik_uygulama, name='geodezik_uygulama'),
+  
 ]
-
 
 
